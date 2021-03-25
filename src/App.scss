@@ -622,10 +622,10 @@ body {
   }
 
   .ref-score:nth-child(1) {
-    padding-left: 1rem;
+    padding-left: 1rem !important;
   }
   .ref-score:nth-child(5) {
-    padding-right: 1rem;
+    padding-right: 1rem !important;
   }
 
   .fifteen-head {

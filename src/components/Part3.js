@@ -56,7 +56,7 @@ export const Part3 = () => {
             />
           </div>
           <div className='expense'>
-            <label htmlFor='cc-expense'>Credit Card Payments</label>
+            <label htmlFor='cc-expense'>Credit Card </label>
             <br />
             <input
               onChange={e => {
