@@ -1,3 +1,8 @@
+body {
+  -webkit-appearance: none;
+  background: #fff;
+}
+
 .nav {
   display: flex;
   justify-content: space-around;
@@ -592,14 +597,14 @@
 @media (max-width: 400px) {
   .nav {
     .progress {
-      transform: scale(0.7);
+      transform: scale(0.6);
     }
   }
 
   .part-1 {
     .status-choice {
       display: flex;
-      flex-direction: column;
+      flex-direction: column !important;
 
       .married {
         width: 100%;
@@ -609,6 +614,10 @@
         width: 100%;
         margin-left: 0;
       }
+    }
+
+    input {
+      width: 90%;
     }
   }
 
