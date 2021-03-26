@@ -615,7 +615,10 @@ body {
       }
       .single {
         width: 100%;
-        margin-left: 0;
+        // margin-left: 0;
+        color: rgb(134, 173, 134);
+        border-color: rgb(134, 173, 134);
+        text-align: center;
       }
     }
 
