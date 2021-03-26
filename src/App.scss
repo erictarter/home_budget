@@ -597,7 +597,7 @@ body {
 @media (max-width: 400px) {
   .nav {
     .progress {
-      transform: scale(0.6);
+      transform: scale(0.6) !important;
     }
   }
 
@@ -609,6 +609,9 @@ body {
       .married {
         width: 100%;
         margin-bottom: 1rem;
+        color: rgb(134, 173, 134);
+        border-color: rgb(134, 173, 134);
+        text-align: center;
       }
       .single {
         width: 100%;
@@ -622,10 +625,10 @@ body {
   }
 
   .ref-score:nth-child(1) {
-    padding-left: 1rem !important;
+    padding-left: 2rem !important;
   }
   .ref-score:nth-child(5) {
-    padding-right: 1rem !important;
+    padding-right: 2rem !important;
   }
 
   .fifteen-head {

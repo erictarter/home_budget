@@ -74,6 +74,4 @@ export default App;
 
 // PART 2 IS GOOD
 
-// PART 3 MATCH 3rd & 4th INPUT LEVEL
-
 // PART 4 STILL NO PADDING ON 1st & LAST COLORS
