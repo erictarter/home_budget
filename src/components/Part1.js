@@ -83,7 +83,10 @@ export const Part1 = () => {
       </animated.div>
       <div
         onClick={() => {
-          if ((name !== '' && marriedSelected) || singleSelected) {
+          if (
+            (name !== '' && marriedSelected) ||
+            (name !== '' && singleSelected)
+          ) {
             AppContext.setStep1(false);
             AppContext.setStep1Complete(true);
             AppContext.setStep2(true);
