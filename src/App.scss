@@ -594,31 +594,27 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .nav {
-    .progress {
-      transform: scale(0.6) !important;
-    }
+    // .progress {
+    //   transform: scale(0.6) !important;
+    // }
+    transform: scale(0.65);
   }
 
   .part-1 {
     .status-choice {
-      display: flex;
-      flex-direction: column !important;
-
       .married {
-        width: 100%;
-        margin-bottom: 1rem;
         color: rgb(134, 173, 134);
         border-color: rgb(134, 173, 134);
         text-align: center;
+        padding: 0.5rem 1rem;
       }
       .single {
-        width: 100%;
-        // margin-left: 0;
         color: rgb(134, 173, 134);
         border-color: rgb(134, 173, 134);
         text-align: center;
+        padding: 0.5rem 1rem;
       }
     }
 
@@ -628,10 +624,10 @@ body {
   }
 
   .ref-score:nth-child(1) {
-    padding-left: 2rem !important;
+    padding-left: 2rem;
   }
   .ref-score:nth-child(5) {
-    padding-right: 2rem !important;
+    padding-right: 2rem;
   }
 
   .fifteen-head {
