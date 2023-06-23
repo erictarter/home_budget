@@ -524,6 +524,7 @@ body {
     .progress {
       transform: scale(0.75) !important;
     }
+    position: relative;
   }
   .next-btn,
   .start-over-btn {
@@ -601,6 +602,8 @@ body {
     input {
       font-size: 1.2rem !important;
     }
+
+    max-height: 500px;
   }
 
   .ref-score {
