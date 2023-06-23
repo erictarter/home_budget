@@ -1,26 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { animated, useSpring } from 'react-spring';
-import { Context } from './context/AppContext';
+import React, { useContext, useState } from 'react'
+import { animated, useSpring } from 'react-spring'
+import { Context } from './context/AppContext'
 
 export const Part4 = () => {
-  const AppContext = useContext(Context);
+  const AppContext = useContext(Context)
 
-  const [score, setScore] = useState(600);
-  const [secondaryScore, setSecondaryScore] = useState(600);
+  const [score, setScore] = useState(600)
+  const [secondaryScore, setSecondaryScore] = useState(600)
 
-  const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false)
 
   const part4An = useSpring({
     opacity: AppContext.step4 ? 1 : 0,
     display: AppContext.step4 ? 'block' : 'none'
-  });
+  })
   const showBtn = useSpring({
     display: AppContext.step4 ? 'block' : 'none'
-  });
+  })
 
   const showMessageAn = useSpring({
     right: showMessage ? '2rem' : '-15rem'
-  });
+  })
 
   return (
     <div>
@@ -60,8 +60,8 @@ export const Part4 = () => {
           <label htmlFor='your-score'>{AppContext.name}'s Credit Score</label>
           <br />
           <input
-            onChange={e => {
-              setScore(e.target.value);
+            onChange={(e) => {
+              setScore(e.target.value)
             }}
             type='number'
             id='your-score'
@@ -76,8 +76,8 @@ export const Part4 = () => {
           </label>
           <br />
           <input
-            onChange={e => {
-              setSecondaryScore(e.target.value);
+            onChange={(e) => {
+              setSecondaryScore(e.target.value)
             }}
             type='number'
             id='secondary-score'
@@ -123,8 +123,8 @@ export const Part4 = () => {
           <label htmlFor='your-score'>{AppContext.name}'s Credit Score</label>
           <br />
           <input
-            onChange={e => {
-              setScore(e.target.value);
+            onChange={(e) => {
+              setScore(e.target.value)
             }}
             type='number'
             id='your-score'
@@ -133,56 +133,55 @@ export const Part4 = () => {
             value={score}
             style={{ marginBottom: '1.5rem' }}
           />
+          <animated.div
+            onClick={() => {
+              // WRITE CONDITIONAL SO SCORES ARE WITH 300-850
+              // SHOW MESSAGE IF NOT
+
+              if (AppContext.secondPerson) {
+                if (
+                  parseInt(score) > 299 &&
+                  (parseInt(score) < 851) & (parseInt(secondaryScore) > 299) &&
+                  parseInt(secondaryScore) < 851
+                ) {
+                  AppContext.setCreditScore(
+                    (parseInt(score) + parseInt(secondaryScore)) / 2
+                  )
+                  AppContext.setStep5(true)
+                  AppContext.setStep4Complete(true)
+                  AppContext.setStep4(false)
+                } else {
+                  setShowMessage(true)
+                  setTimeout(() => {
+                    setShowMessage(false)
+                  }, 2400)
+                }
+              } else {
+                if (parseInt(score) > 299 && parseInt(score) < 851) {
+                  AppContext.setCreditScore(parseInt(score))
+                  AppContext.setStep5(true)
+                  AppContext.setStep4Complete(true)
+                  AppContext.setStep4(false)
+                  console.log(AppContext.creditScore)
+                } else {
+                  setShowMessage(true)
+                  setTimeout(() => {
+                    setShowMessage(false)
+                  }, 2400)
+                }
+              }
+            }}
+            style={showBtn}
+            className='next-btn'>
+            Continue
+          </animated.div>
         </animated.div>
       )}
       <animated.div style={showMessageAn} className='message'>
         Score should be between 300-850..
       </animated.div>
-      <animated.div
-        onClick={() => {
-          // WRITE CONDITIONAL SO SCORES ARE WITH 300-850
-          // SHOW MESSAGE IF NOT
-
-          if (AppContext.secondPerson) {
-            if (
-              parseInt(score) > 299 &&
-              (parseInt(score) < 851) & (parseInt(secondaryScore) > 299) &&
-              parseInt(secondaryScore) < 851
-            ) {
-              AppContext.setCreditScore(
-                (parseInt(score) + parseInt(secondaryScore)) / 2
-              );
-              AppContext.setStep5(true);
-              AppContext.setStep4Complete(true);
-              AppContext.setStep4(false);
-            } else {
-              setShowMessage(true);
-              setTimeout(() => {
-                setShowMessage(false);
-              }, 2400);
-            }
-          } else {
-            if (parseInt(score) > 299 && parseInt(score) < 851) {
-              AppContext.setCreditScore(parseInt(score));
-              AppContext.setStep5(true);
-              AppContext.setStep4Complete(true);
-              AppContext.setStep4(false);
-              console.log(AppContext.creditScore);
-            } else {
-              setShowMessage(true);
-              setTimeout(() => {
-                setShowMessage(false);
-              }, 2400);
-            }
-          }
-        }}
-        style={showBtn}
-        className='next-btn'
-      >
-        Continue
-      </animated.div>
     </div>
-  );
-};
+  )
+}
 
-export default Part4;
+export default Part4

@@ -4,20 +4,15 @@ body {
 }
 
 .nav {
+  top: 0;
+  position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-bottom: 0.5rem;
   align-items: flex-end;
-  height: 15vh;
-  border-bottom: 1px solid #ddd;
+  height: 7.5em;
   color: #333;
-  box-shadow: 0 2px 6px -6px black;
-
-  .main {
-    position: relative;
-    height: 85vh;
-    width: 100vw;
-  }
+  width: 100%;
 
   .dots {
     display: flex;
@@ -38,7 +33,6 @@ body {
 
     .line {
       width: 75px;
-      //   background: rgb(21, 221, 184);
       background: #ddd;
       height: 1px;
       margin: 0 -0.4rem;
@@ -46,7 +40,6 @@ body {
 
     .ghost-line-1 {
       position: absolute;
-      //   width: 62px;
       background: rgb(134, 241, 213);
       height: 1.8px;
     }
@@ -74,16 +67,16 @@ body {
 }
 
 .start {
-  position: absolute;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   h2 {
     color: rgb(164, 189, 187);
-    font-size: 2.4rem;
+    font-size: 2em;
     text-align: center;
+    padding: 0 0.5em;
   }
   button {
     font-size: 1.6rem;
@@ -105,54 +98,40 @@ body {
   }
 }
 
-.next-btn {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+.next-btn,
+.start-over-btn {
   font-size: 1.4rem;
   padding: 0.8rem 0.8rem;
-  background: rgb(21, 221, 184);
+  background: #9bdd9b;
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s ease;
+  margin-top: 2em;
+  width: 100%;
+  text-align: center;
 }
 .next-btn:hover {
   transition: all 0.2s ease;
-  background: rgb(39, 209, 169);
+  background: #7db07d;
 }
 
-.start-over-btn {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-size: 1.4rem;
-  padding: 0.8rem 0.8rem;
-  background: rgb(21, 221, 184);
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
 .start-over-btn:hover {
   transition: all 0.2s ease;
-  background: rgb(39, 209, 169);
+  background: #7db07d;
 }
 
 .part-1 {
-  position: absolute;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 50vh;
   margin-top: 1.6rem;
-  width: 40%;
-  margin-left: 30%;
+  width: 100%;
 
   h3 {
-    font-size: 2.8rem;
+    font-size: 2.2em;
     color: rgb(164, 189, 187);
   }
   h4 {
@@ -163,7 +142,7 @@ body {
     border: none;
     border-bottom: 1px solid rgb(157, 157, 157);
     padding: 0.2rem 0.6rem;
-    font-size: 2rem;
+    font-size: 1.6em;
     color: rgb(157, 157, 157);
   }
   .name:focus {
@@ -226,16 +205,12 @@ body {
 }
 
 .part-2 {
-  position: absolute;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
   margin-top: 1.6rem;
-  width: 40%;
-  margin-left: 30%;
 
   .income {
     margin-bottom: 1.5rem;
@@ -310,16 +285,12 @@ body {
 }
 
 .part-3 {
-  position: absolute;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
   margin-top: 1.6rem;
-  width: 40%;
-  margin-left: 30%;
 
   h2 {
     font-size: 1.6rem;
@@ -359,16 +330,12 @@ body {
 }
 
 .part-4 {
-  position: absolute;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
   margin-top: 1.6rem;
-  width: 40%;
-  margin-left: 30%;
 
   h2 {
     font-size: 1.6rem;
@@ -465,16 +432,12 @@ body {
 }
 
 .part-5 {
-  position: absolute;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
   margin-top: 1.6rem;
-  width: 40%;
-  margin-left: 30%;
 
   h2 {
     font-size: 1.6rem;
@@ -505,11 +468,9 @@ body {
 
 .results {
   width: 100vw;
+  margin-top: 2.5em;
   h2 {
     color: rgb(157, 157, 157);
-    border-bottom: 1px solid rgb(157, 157, 157);
-    width: 60%;
-    margin-left: 20%;
     padding-bottom: 1rem;
   }
 }
@@ -517,8 +478,6 @@ body {
 .results-container {
   display: flex;
   justify-content: center;
-  width: 60%;
-  margin-left: 20%;
 
   .fifteen-year {
     width: 100%;
@@ -560,46 +519,18 @@ body {
   }
 }
 
-@media (max-width: 1100px) {
-  .part-3,
-  .part-1,
-  .part-2 {
-    width: 60%;
-    margin-left: 20%;
-  }
-}
-@media (max-width: 700px) {
-  .part-3,
-  .part-1,
-  .part-2,
-  .part-4,
-  .part-5 {
-    width: 80%;
-    margin-left: 10%;
-
-    h3 {
-      font-size: 1.8rem;
-    }
-  }
-  .results-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .start-over-btn {
-    position: relative;
-    width: 50vw;
-    margin-left: 30%;
-    margin-top: 5rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 450px) {
+@media (max-width: 576px) {
   .nav {
     .progress {
-      transform: scale(0.7) !important;
+      transform: scale(0.75) !important;
     }
-    // transform: scale(0.65);
+  }
+  .next-btn,
+  .start-over-btn {
+    max-width: 245px !important;
+    bottom: 0;
+    right: 0;
+    text-align: center;
   }
 
   .part-1 {
@@ -616,10 +547,6 @@ body {
         text-align: center;
         padding: 0.5rem 1rem;
       }
-    }
-
-    input {
-      width: 90%;
     }
   }
 
@@ -649,5 +576,99 @@ body {
   }
   .results-container {
     margin-left: 15%;
+  }
+
+  .App {
+    margin-left: 10%;
+  }
+  .name {
+    width: 80%;
+  }
+
+  .part-1,
+  .part-2,
+  .part-3,
+  .part-4,
+  .part-5 {
+    max-width: 325px !important;
+    padding: 0.5rem !important;
+    h3 {
+      font-size: 1.8em;
+    }
+    h4 {
+      font-size: 1.6rem;
+    }
+    input {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  .ref-score {
+    p {
+      height: 2rem;
+    }
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .part-1,
+  .part-2,
+  .part-3,
+  .part-4,
+  .part-5,
+  .results {
+    transform: translateX(-2.25em);
+  }
+}
+
+.part-1,
+.part-2,
+.part-3,
+.part-4,
+.part-5,
+.results {
+  max-width: 400px;
+}
+
+.results {
+  h3 {
+    margin: 0;
+  }
+}
+
+.results-container {
+  flex-direction: column;
+}
+.fifteen-year {
+  margin-top: 1.5em;
+}
+
+.fifteen-head,
+.thirty-head {
+  color: #577d75 !important;
+  font-size: 1.6em;
+}
+
+.start {
+  button {
+    width: 90%;
+    max-width: 400px;
   }
 }

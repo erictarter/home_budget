@@ -1,74 +1,73 @@
-import React, { useContext, useState } from 'react';
-import { animated, useSpring } from 'react-spring';
-import { Context } from './context/AppContext';
+import React, { useContext, useState } from 'react'
+import { animated, useSpring } from 'react-spring'
+import { Context } from './context/AppContext'
 
 export const Results = () => {
-  const AppContext = useContext(Context);
-  let cred = AppContext.creditScore;
+  const AppContext = useContext(Context)
+  let cred = AppContext.creditScore
 
-  let nfObject = new Intl.NumberFormat('en-US');
+  let nfObject = new Intl.NumberFormat('en-US')
 
-  let base;
-  let base2;
+  let base
+  let base2
 
-  let rate;
-  let rate2;
+  let rate
+  let rate2
 
   let available =
     parseInt(AppContext.income) +
     parseInt(AppContext.secondIncome) -
-    parseInt(AppContext.expenses);
+    parseInt(AppContext.expenses)
 
   if (cred < 640) {
-    rate2 = 2.49;
-    base2 = 133;
+    rate2 = 2.49
+    base2 = 133
   }
   if (cred > 639 && cred < 660) {
-    rate2 = 2.49;
-    base2 = 133;
+    rate2 = 2.49
+    base2 = 133
   }
   if (cred > 659 && cred < 851) {
-    rate2 = 1.88;
-    base2 = 138;
+    rate2 = 1.88
+    base2 = 138
   }
 
   if (cred < 640) {
-    rate = 4.35;
-    base = 172;
+    rate = 4.35
+    base = 172
   }
   if (cred > 639 && cred < 660) {
-    rate = 3.75;
-    base = 181;
+    rate = 3.75
+    base = 181
   }
   if (cred > 659 && cred < 680) {
-    rate = 3.35;
-    base = 193.5;
+    rate = 3.35
+    base = 193.5
   }
   if (cred > 679 && cred < 700) {
-    rate = 3.15;
+    rate = 3.15
   }
   if (cred > 699 && cred < 760) {
-    rate = 2.95;
-    base = 198;
+    rate = 2.95
+    base = 198
   }
   if (cred > 759 && cred < 851) {
-    rate = 2.72;
-    base = 203;
+    rate = 2.72
+    base = 203
   }
 
   const resultsAn = useSpring({
     opacity: AppContext.done ? 1 : 0,
     display: AppContext.done ? 'block' : 'none'
-  });
+  })
 
   const showBtn = useSpring({
     display: AppContext.done ? 'block' : 'none'
-  });
+  })
 
   return (
     <div>
       <animated.div style={resultsAn} className='results'>
-        <h2>Results</h2>
         {/* {AppContext.income}
         <br />
         {AppContext.secondIncome}
@@ -79,6 +78,7 @@ export const Results = () => {
         <br />
         {AppContext.downPayment} */}
         <div className='results-container'>
+          <h2>Results</h2>
           <div className='thirty-year'>
             <h3 className='thirty-head'>30-Year</h3>
             <div className='home-value'>
@@ -117,19 +117,18 @@ export const Results = () => {
               <h4>${(available * 0.36).toFixed(2)}</h4>
             </div>
           </div>
+          <animated.div
+            onClick={() => {
+              window.location.reload()
+            }}
+            style={showBtn}
+            className='start-over-btn'>
+            Start Over
+          </animated.div>
         </div>
       </animated.div>
-      <animated.div
-        onClick={() => {
-          window.location.reload();
-        }}
-        style={showBtn}
-        className='start-over-btn'
-      >
-        Start Over
-      </animated.div>
     </div>
-  );
-};
+  )
+}
 
-export default Results;
+export default Results
